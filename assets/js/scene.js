@@ -660,6 +660,7 @@
     function frame(dt, k, pointer, still) {
       clock += dt;
       k = clamp(k, 0, K.length - 1);
+      ink.scale.x = 1; ink.position.x = -29;
       var i = Math.min(Math.floor(k), K.length - 2), f = smoother(k - i), a = K[i], b = K[i + 1];
       if (portrait > 0.5 && i + 1 === K.length - 1) b = K[0]; // on phones the contact view reuses the hero framing
       cp.lerpVectors(a.p, b.p, f); ct.lerpVectors(a.t, b.t, f);
@@ -705,7 +706,33 @@
       return { x: (tmp.x * 0.5 + 0.5) * W, y: (-tmp.y * 0.5 + 0.5) * H };
     }
 
+    // One still frame at an exact pixel size, for artwork such as social posts.
+    function shot(o) {
+      renderer.setPixelRatio(1); renderer.setSize(o.w, o.h, false);
+      W = o.w; H = o.h;
+      camera.aspect = o.w / o.h; camera.fov = o.fov || 32;
+      cp.set(o.p[0], o.p[1], o.p[2]); ct.set(o.t[0], o.t[1], o.t[2]);
+      camera.position.copy(cp); camera.lookAt(ct);
+      camera.setViewOffset(o.w, o.h, -(o.sx || 0) * o.w, (o.sy || 0) * o.h, o.w, o.h);
+      heroLoose.visible = o.loose !== false;
+      ink.scale.x = o.ink ? 1.6 : 1; ink.position.x = o.ink ? 4 : -29; // stills can push the ink edge out of frame
+      var inkAmt = (1 - sstep(10, 30, ct.x)) * (1 - sstep(30, 60, ct.z));
+      var blackAmt = sstep(96, 118, ct.x) * sstep(30, 52, ct.z);
+      scene.background.lerpColors(BG_STONE, BG_INK, inkAmt).lerp(BG_BLACK, blackAmt);
+      scene.fog.color.copy(scene.background);
+      sun.target.position.copy(ct); sun.position.set(ct.x - 11, 24, ct.z + 13);
+      heroDial.needle.rotation.z = -((o.needle || 0) / 0.1) * 2 * PI;
+      for (var s = 1; s <= 5; s++) {
+        var av = (o.act && o.act[s]) || 0;
+        for (var r = 0; r < (s === 3 ? 40 : 1); r++) tick[s](av, 1.3, 0.016);
+      }
+      renderer.render(scene, camera);
+      return renderer.domElement;
+    }
+
     return {
+      shot: shot, makers: MK, service: SV,
+      keys: K.map(function (k) { return { p: k.p.toArray(), t: k.t.toArray(), sx: k.sx, sy: k.sy }; }),
       resize: resize, frame: frame, anchor: anchor, state: state,
       zero: function () { hero.zero = hero.raw; }
     };

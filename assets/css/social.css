@@ -1,0 +1,97 @@
+/* Contact sheet for the social posts. Tokens, type and buttons come from site.css. */
+
+.sheet {
+  background: var(--black);
+  color: var(--on-ink);
+  overflow-x: visible;
+}
+
+.sheet__head {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem var(--gutter);
+  background: var(--black);
+  border-bottom: 1px solid oklch(1 0 0 / 0.18);
+}
+
+.sheet__main { padding: clamp(3rem, 8vh, 5rem) var(--gutter) 6rem; }
+
+.sheet__intro { max-width: 40rem; }
+.sheet__intro h1 { font-size: clamp(2.2rem, 4.3vw, 4rem); }
+.sheet__intro p { margin-top: 1.4rem; color: var(--on-black-2); }
+.sheet__intro .note { margin-top: 0.8rem; }
+
+.btn:disabled { opacity: 0.45; cursor: progress; transform: none; }
+button.btn { border: 0; font-family: inherit; cursor: pointer; }
+
+.posts { margin-top: clamp(3rem, 8vh, 5rem); display: grid; gap: clamp(3.5rem, 9vh, 6rem); }
+
+.post { border-top: 1px solid oklch(1 0 0 / 0.22); padding-top: 1.4rem; }
+.post h2 {
+  font-stretch: 62%;
+  font-weight: 700;
+  font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.post__pair {
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  align-items: end;
+  gap: clamp(1.25rem, 3vw, 3rem);
+}
+
+.art { margin: 0; }
+.art canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: oklch(0.24 0.006 250);
+  box-shadow: 0 24px 48px -28px oklch(0 0 0 / 0.9);
+}
+.art figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  margin-top: 0.9rem;
+  font-stretch: 68%;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-black-2);
+}
+
+.save {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.5rem;
+  padding: 0 0.95rem;
+  background: none;
+  color: var(--on-ink);
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  font: inherit;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.save::before { content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--needle); }
+.save:hover { background: var(--on-ink); color: var(--black); }
+
+@media (max-width: 860px) {
+  .post__pair { grid-template-columns: 1fr; }
+  .sheet .mark__word { display: none; }
+}

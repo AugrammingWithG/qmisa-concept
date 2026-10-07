@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q&amp;M Instrumentation | Social posts</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/img/mark.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/social.css">
+</head>
+<body class="sheet" data-tone="black">
+
+<header class="sheet__head">
+  <a class="mark" href="index.html" aria-label="Q&amp;M Instrumentation, back to the homepage">
+    <svg viewBox="0 0 132 48" width="110" height="40" aria-hidden="true">
+      <circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="7"/>
+      <path class="mark__needle" d="M22.2 22.2 L26.6 20.4 L45 43 L41.6 46 Z"/>
+      <text x="52" y="38" font-size="34"><tspan class="mark__amp">&amp;</tspan><tspan dx="1">M</tspan></text>
+    </svg>
+    <span class="mark__word">Instrumentation</span>
+  </a>
+  <button class="btn btn--small" type="button" id="all" disabled>Download all PNGs</button>
+</header>
+
+<main class="sheet__main">
+  <div class="sheet__intro">
+    <h1>Social posts</h1>
+    <p>Nine launch posts, each in portrait 1080 × 1350 and landscape 1200 × 627. Every image is rendered at full size from the same 3D scene as the homepage. Use the button under a post to save it as a PNG.</p>
+    <p class="note" id="status" role="status">Rendering the posts…</p>
+  </div>
+  <ol class="posts" id="posts"></ol>
+</main>
+
+<script src="assets/vendor/three.min.js"></script>
+<script src="assets/js/scene.js"></script>
+<script src="assets/js/social.js"></script>
+</body>
+</html>
