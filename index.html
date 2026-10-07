@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q&amp;M Instrumentation | Quality machinery, measured and maintained</title>
+<meta name="description" content="Q&amp;M Instrumentation has supplied quality machinery, measurement equipment and instrumentation since 2004, with systems manufacturing, repairs, calibration, certification and training.">
+<meta name="theme-color" content="#12287a">
+<link rel="icon" href="assets/img/mark.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<canvas id="plate" aria-hidden="true"></canvas>
+<svg id="leader" aria-hidden="true"><line x1="0" y1="0" x2="0" y2="0"/><circle r="4"/></svg>
+
+<header class="bar" data-tone="ink">
+  <a class="mark" href="#top" aria-label="Q&amp;M Instrumentation, home">
+    <svg viewBox="0 0 132 48" width="110" height="40" aria-hidden="true">
+      <circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="7"/>
+      <path class="mark__needle" d="M22.2 22.2 L26.6 20.4 L45 43 L41.6 46 Z"/>
+      <text x="52" y="38" font-size="34"><tspan class="mark__amp">&amp;</tspan><tspan dx="1">M</tspan></text>
+    </svg>
+    <span class="mark__word">Instrumentation</span>
+  </a>
+  <nav class="bar__nav" aria-label="Primary">
+    <a href="#equipment">Equipment</a>
+    <a href="#makers">Makers</a>
+    <a href="#service">Service</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn btn--small" href="tel:+61451533197">Talk to sales</a>
+</header>
+
+<aside class="scale" data-tone="ink" aria-hidden="true">
+  <div class="scale__ticks"></div>
+  <div class="scale__index"></div>
+  <span class="scale__label">Start</span>
+</aside>
+
+<main id="main">
+
+  <section class="stage stage--hero" id="top" data-tone="ink" data-key="0" data-side="left" data-name="Start">
+    <div class="stage__body">
+      <h1>Quality machinery,<br>measured and<br>maintained.</h1>
+      <p class="lede">Since 2004, Q&amp;M Instrumentation has supplied measurement equipment, instrumentation and production machinery to manufacturers, and stayed on to build, repair, calibrate and certify it.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Talk to sales</a>
+        <button class="zero" type="button" id="zero" aria-describedby="zero-note">
+          <span class="zero__cap">Zero the indicator</span>
+          <output class="read" id="r-hero" aria-live="off">+0.000 mm</output>
+        </button>
+      </div>
+      <p class="note" id="zero-note">Move across the screen to load the plunger. Reading is illustrative.</p>
+    </div>
+    <ul class="industries" aria-label="Industries served">
+      <li>Food processing</li><li>Packaging</li><li>Air conditioning</li><li>Refrigeration</li>
+      <li>Automotive</li><li>Appliance</li><li>Mining</li><li>General manufacturing</li>
+    </ul>
+  </section>
+
+  <div id="equipment">
+
+  <section class="stage" data-tone="stone" data-key="1" data-side="right" data-name="Leak and flow">
+    <div class="stage__body">
+      <h2>Leak, flow and pressure</h2>
+      <p>Leak detectors for automotive radiators, gas appliances, valves and medical devices. Flow measurement from 0.01&nbsp;ml/min to 20,000&nbsp;l/min, and pressure from 0.01&nbsp;Pa to 20&nbsp;kPa.</p>
+      <ul class="tags" aria-label="Makers">
+        <li><a href="https://www.qmisa.com/furness-controls/">Furness Controls</a></li>
+        <li><a href="https://www.qmisa.com/galileo/">Galileo TP</a></li>
+        <li><a href="https://www.qmisa.com/oak-europa-ramer/">OAK Europa (Ramer)</a></li>
+      </ul>
+      <dl class="reads">
+        <div><dt>Test pressure</dt><dd class="read" id="r-leak-p">0.00 bar</dd></div>
+        <div><dt>Pressure decay</dt><dd class="read" id="r-leak-d">0.0 Pa/s</dd></div>
+        <div><dt>Result</dt><dd class="read" id="r-leak-r">Filling</dd></div>
+      </dl>
+      <p class="note">Illustrative readings from the model on the plate.</p>
+    </div>
+  </section>
+
+  <section class="stage" data-tone="stone" data-key="2" data-side="left" data-name="Refrigeration">
+    <div class="stage__body">
+      <h2>Refrigeration and air conditioning</h2>
+      <p>Evacuation systems, refrigerant charging machines and recovery units for production lines, with the manifolds, gauges, vacuum pumps, hoses and scales the service bench runs on.</p>
+      <ul class="tags" aria-label="Makers">
+        <li><a href="https://www.qmisa.com/galileo/">Galileo TP</a></li>
+        <li><a href="https://www.qmisa.com/wigam/">Wigam</a></li>
+        <li><a href="https://www.qmisa.com/supco/">Supco</a></li>
+        <li><a href="https://www.qmisa.com/imperial-tools/">Imperial Tools</a></li>
+        <li><a href="https://www.qmisa.com/gomax/">GOMAX</a></li>
+      </ul>
+      <dl class="reads">
+        <div><dt>Low side</dt><dd class="read" id="r-ref-l">0.0 bar</dd></div>
+        <div><dt>High side</dt><dd class="read" id="r-ref-h">0.0 bar</dd></div>
+        <div><dt>Charge</dt><dd class="read" id="r-ref-c">0.000 kg</dd></div>
+      </dl>
+      <p class="note">Illustrative readings from the model on the plate.</p>
+    </div>
+  </section>
+
+  <section class="stage" data-tone="stone" data-key="3" data-side="right" data-name="Marking">
+    <div class="stage__body">
+      <h2>Marking and traceability</h2>
+      <p>Dot peen and laser marking stations that give every part a permanent identity: portable and wireless, on the bench, or built into the line.</p>
+      <ul class="tags" aria-label="Makers">
+        <li><a href="https://www.qmisa.com/technomark/">Technomark</a></li>
+      </ul>
+      <dl class="reads">
+        <div><dt>Marking</dt><dd class="read" id="r-mark-t">Q&amp;M EST 2004</dd></div>
+        <div><dt>Dots struck</dt><dd class="read" id="r-mark-n">0</dd></div>
+      </dl>
+      <p class="note">Illustrative model of a dot peen cycle.</p>
+    </div>
+  </section>
+
+  <section class="stage" data-tone="stone" data-key="4" data-side="left" data-name="Balancing">
+    <div class="stage__body">
+      <h2>Balancing</h2>
+      <p>Turbocharger balancers and flow benches, automotive and industrial balancing machines, and field balancers for work on site, universal or built to the job.</p>
+      <ul class="tags" aria-label="Makers">
+        <li><a href="https://www.qmisa.com/cimat/">CIMAT</a></li>
+      </ul>
+      <dl class="reads">
+        <div><dt>Rotor speed</dt><dd class="read" id="r-bal-s">0 rpm</dd></div>
+        <div><dt>Residual unbalance</dt><dd class="read" id="r-bal-u">0.00 g·mm</dd></div>
+      </dl>
+      <p class="note">Illustrative readings from the model on the plate.</p>
+    </div>
+  </section>
+
+  <section class="stage" data-tone="stone" data-key="5" data-side="right" data-name="Packaging">
+    <div class="stage__body">
+      <h2>Processing and packaging</h2>
+      <p>Vacuum packaging machines, tray sealers, shrink tanks, slicers and tumblers in industrial-grade materials, for light duty and heavy duty lines alike.</p>
+      <ul class="tags" aria-label="Makers">
+        <li><a href="https://www.qmisa.com/volvac/">Volvac</a></li>
+      </ul>
+      <dl class="reads">
+        <div><dt>Chamber</dt><dd class="read" id="r-pack-v">0.00 bar</dd></div>
+        <div><dt>Cycle</dt><dd class="read" id="r-pack-s">Open</dd></div>
+      </dl>
+      <p class="note">Illustrative readings from the model on the plate.</p>
+    </div>
+  </section>
+
+  </div>
+
+  <section class="makers" id="makers" data-tone="black" data-name="Makers">
+    <div class="wrap">
+      <h2>Ten makers.<br>One supplier.</h2>
+      <p class="makers__lede">Q&amp;M represents specialist manufacturers and is the single point of contact for all of them: supply, spares and support.</p>
+      <ol class="rows">
+        <li><a href="https://www.qmisa.com/furness-controls/"><span class="rows__name">Furness Controls</span><span class="rows__what">Leak detection, flow measurement, micromanometers, calibrators</span></a></li>
+        <li><a href="https://www.qmisa.com/galileo/"><span class="rows__name">Galileo TP</span><span class="rows__what">Line leak detection, evacuation and refrigerant charging, vacuum pumps</span></a></li>
+        <li><a href="https://www.qmisa.com/gomax/"><span class="rows__name">GOMAX</span><span class="rows__what">Thermoplastic hose for medium to very high pressures</span></a></li>
+        <li><a href="https://www.qmisa.com/imperial-tools/"><span class="rows__name">Imperial Tools</span><span class="rows__what">Tube cutters, benders and flaring tools, manifolds and gauges</span></a></li>
+        <li><a href="https://www.qmisa.com/oak-europa-ramer/"><span class="rows__name">OAK Europa (Ramer)</span><span class="rows__what">Connectors and fittings for production leak testing</span></a></li>
+        <li><a href="https://www.qmisa.com/supco/"><span class="rows__name">Supco</span><span class="rows__what">Electronic test and service instruments, HVAC/R components</span></a></li>
+        <li><a href="https://www.qmisa.com/technomark/"><span class="rows__name">Technomark</span><span class="rows__what">Dot peen and laser marking, traceability</span></a></li>
+        <li><a href="https://www.qmisa.com/volvac/"><span class="rows__name">Volvac</span><span class="rows__what">Vacuum packaging, tray sealing, slicers, tumblers</span></a></li>
+        <li><a href="https://www.qmisa.com/wigam/"><span class="rows__name">Wigam</span><span class="rows__what">Recovery, vacuum and charging units, leak detectors, scales</span></a></li>
+        <li><a href="https://www.qmisa.com/cimat/"><span class="rows__name">CIMAT</span><span class="rows__what">Turbocharger, automotive and industrial balancing machines</span></a></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="service" id="service" data-tone="stone" data-name="Service">
+    <div class="wrap service__grid">
+      <div class="service__head">
+        <h2>The supplier that stays.</h2>
+        <p>Equipment is only as good as the number it gives you next year. Q&amp;M backs what it sells with specialised sales and full technical service.</p>
+      </div>
+      <ul class="service__list">
+        <li><h3>Systems manufacturing</h3><p>Test and production systems built around the instruments we supply.</p></li>
+        <li><h3>Repairs</h3><p>Faults found and fixed by people who know the equipment.</p></li>
+        <li><h3>Calibration</h3><p>Instruments checked against a reference and brought back to true.</p></li>
+        <li><h3>Certification</h3><p>The paperwork that shows the reading can be trusted.</p></li>
+        <li><h3>Product training</h3><p>Your operators shown how to get the most from each machine.</p></li>
+        <li><h3>Stock and spare parts</h3><p>Parts held on the shelf so a stopped line starts again sooner.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="stage stage--contact" id="contact" data-tone="ink" data-key="9" data-side="left" data-name="Contact">
+    <div class="stage__body">
+      <h2>Tell us what you need to test, mark, balance or pack.</h2>
+      <ul class="lines">
+        <li><span>Sales</span><a href="tel:+61451533197">+61 (0)45 153 3197</a></li>
+        <li><span>Technical support</span><a href="tel:+61482473400">+61 (0)48 247 3400</a></li>
+        <li><span>Email</span><a href="mailto:paulm@qmiau.com">paulm@qmiau.com</a></li>
+      </ul>
+    </div>
+    <footer class="foot">
+      <p>© 2026 Q&amp;M Instrumentation. Est. 2004.</p>
+      <p>Brand and website concept by Cre8tive Sync. Not yet an official Q&amp;M site.</p>
+    </footer>
+  </section>
+
+</main>
+
+<script src="assets/vendor/three.min.js"></script>
+<script src="assets/js/scene.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
